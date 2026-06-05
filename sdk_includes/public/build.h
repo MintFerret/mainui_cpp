@@ -88,12 +88,9 @@ Then you can use another oneliner to query all variables:
 #undef XASH_TERMUX
 #undef XASH_WASI
 #undef XASH_WASM
-<<<<<<< HEAD
 #undef XASH_WIN32
 #undef XASH_X86
-=======
 #undef XASH_OGC
->>>>>>> 13e86ca (ogc: fixed muldefs)
 
 //================================================================
 //
