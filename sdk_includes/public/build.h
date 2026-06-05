@@ -88,8 +88,12 @@ Then you can use another oneliner to query all variables:
 #undef XASH_TERMUX
 #undef XASH_WASI
 #undef XASH_WASM
+<<<<<<< HEAD
 #undef XASH_WIN32
 #undef XASH_X86
+=======
+#undef XASH_OGC
+>>>>>>> 13e86ca (ogc: fixed muldefs)
 
 //================================================================
 //
@@ -138,6 +142,10 @@ Then you can use another oneliner to query all variables:
 		#define XASH_WASI 1
 	#elif defined __sun__
 		#define XASH_SUNOS 1
+	#elif defined __EMSCRIPTEN__
+		#define XASH_EMSCRIPTEN 1
+	#elif defined __wii__ || defined __gamecube__
+		#define XASH_OGC
 	#elif defined __gnu_hurd__
 		#define XASH_HURD 1
 	#else

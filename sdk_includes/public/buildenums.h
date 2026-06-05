@@ -59,6 +59,7 @@ For more information, please refer to <http://unlicense.org/>
 #define PLATFORM_SUNOS      16
 #define PLATFORM_HURD       17
 #define PLATFORM_PSP        18
+#define PLATFORM_OGC        19
 
 #if XASH_WIN32
 	#define XASH_PLATFORM PLATFORM_WIN32
@@ -94,6 +95,8 @@ For more information, please refer to <http://unlicense.org/>
 	#define XASH_PLATFORM PLATFORM_HURD
 #elif XASH_PSP
 	#define XASH_PLATFORM PLATFORM_PSP
+#elif XASH_OGC
+	#define XASH_PLATFORM PLATFORM_OGC
 #else
 	#error
 #endif
