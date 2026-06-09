@@ -32,7 +32,12 @@ void DBG_AssertFunction( bool fExpr, const char* szExpr, const char* szFile, int
 #define ASSERT( f )
 #endif
 
+#if HW_RVL || HW_DOL //XASH_OGC
+extern ui_globalvars_t		*gpGlobals_MENU;
+#define gpGlobals gpGlobals_MENU
+#else
 extern ui_globalvars_t		*gpGlobals;
+#endif
 
 // exports
 extern int UI_VidInit( void );

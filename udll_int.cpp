@@ -22,7 +22,6 @@ ui_enginefuncs_t EngFuncs::engfuncs;
 ui_extendedfuncs_t EngFuncs::textfuncs;
 #if HW_RVL || HW_DOL //Why is XASH_OGC not defined?
 ui_globalvars_t	*gpGlobals_MENU;
-#define gpGlobals gpGlobals_MENU
 #else
 ui_globalvars_t	*gpGlobals;
 #endif
