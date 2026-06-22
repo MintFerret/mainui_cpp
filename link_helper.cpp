@@ -8,7 +8,7 @@ extern int GetExtAPI( int version, UI_EXTENDED_FUNCTIONS *pFunctionTable, ui_ext
 
 struct {const char *name; void *func;} lib_menu_exports[] = {
 	{ "GetMenuAPI", (void*)GetMenuAPI },
-	{ "ExtAPI", (void*)GetExtAPI },
+	{ "GetExtAPI", (void*)GetExtAPI },
 	{ 0, 0 }
 };
 }
