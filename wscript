@@ -29,7 +29,7 @@ def configure(conf):
 	if not conf.check_std('cxx11'):
 		conf.define('MY_COMPILER_SUCKS', 1)
 
-	if conf.env.DEST_OS in ['android', 'darwin', 'nswitch', 'psvita', 'emscripten'] or conf.env.MAGX:
+	if conf.env.DEST_OS in ['android', 'darwin', 'nswitch', 'psvita', 'emscripten', 'wii'] or conf.env.MAGX:
 		conf.options.USE_STBTT = True
 
 	conf.define('MAINUI_USE_CUSTOM_FONT_RENDER', 1)
@@ -61,7 +61,9 @@ def build(bld):
 		'menus/dynamic/*.cpp',
 		'model/*.cpp',
 		'controls/*.cpp'
-	])
+	],
+	excl='link_helper.cpp'
+	)
 
 	includes = [
 		'.',
