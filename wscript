@@ -29,9 +29,11 @@ def configure(conf):
 	if not conf.check_std('cxx11'):
 		conf.define('MY_COMPILER_SUCKS', 1)
 
-	if conf.env.DEST_OS in ['android', 'darwin', 'nswitch', 'psvita', 'emscripten', 'wii'] or conf.env.MAGX:
+	if conf.env.DEST_OS in ['android', 'darwin', 'nswitch', 'psvita', 'emscripten'] or conf.env.MAGX:
 		conf.options.USE_STBTT = True
 
+	if conf.env.STATIC_LINKING:
+		conf.define('XASH_STATIC', 1)
 	conf.define('MAINUI_USE_CUSTOM_FONT_RENDER', 1)
 
 	nortti = {
@@ -48,7 +50,7 @@ def configure(conf):
 		conf.env.append_unique('CXXFLAGS', '-fno-exceptions')
 
 	if conf.env.DEST_OS != 'win32' and conf.env.DEST_OS != 'dos':
-		if not conf.options.USE_STBTT and not conf.options.LOW_MEMORY:
+		if not conf.options.USE_STBTT and not conf.options.LOW_MEMORY or conf.env.DEST_OS == 'wii':
 			conf.check_pkg('freetype2', 'FT2', FT2_CHECK)
 			conf.define('MAINUI_USE_FREETYPE', 1)
 
